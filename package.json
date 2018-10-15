@@ -1,0 +1,36 @@
+{
+  "name": "hackernewsclone",
+  "version": "1.0.0",
+  "description": "A React.js based HackerNews clone.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ewliang/HackerNews-Clone.git"
+  },
+  "keywords": [
+    "reactjs",
+    "hackernews",
+    "clone",
+    "hackernews",
+    "webpack"
+  ],
+  "author": "Eric Liang <ericwliang94@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ewliang/HackerNews-Clone/issues"
+  },
+  "homepage": "https://github.com/ewliang/HackerNews-Clone#readme",
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^8.0.4",
+    "babel-preset-es2015": "^6.24.1",
+    "webpack": "^4.20.2"
+  },
+  "dependencies": {
+    "react": "^16.5.2",
+    "react-dom": "^16.5.2"
+  }
+}
