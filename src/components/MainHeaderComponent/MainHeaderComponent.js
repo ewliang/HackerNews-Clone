@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-class MainHeaderComponent extends React.Component {
+class MainHeaderComponent extends Component {
   render() {
     return (
       <header>
