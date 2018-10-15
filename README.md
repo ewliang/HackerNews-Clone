@@ -27,8 +27,8 @@ DEMO: []()
 
 # Author
 Eric Liang
-- Website []()
-- Github []()
+- Website [https://www.eric-liang.com](https://www.eric-liang.com)
+- Github [https://www.github.com/ewliang](https://www.github.com/ewliang)
 
 # License
 This project is protected by the MIT license. Full details are listed in the LICENSE file.
