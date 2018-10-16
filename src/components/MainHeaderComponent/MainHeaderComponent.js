@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
+import styles from './MainHeaderComponent.css';
 
 class MainHeaderComponent extends Component {
   render() {
     return (
-      <header>
-        <img src = "" alt = ""/>
+      <header className = { styles['main-header'] }>
+        <img src = "" alt = "HackerNews Clone Logo"/>
         <nav>
           <ul>
             <li><a href = "">New</a></li>
