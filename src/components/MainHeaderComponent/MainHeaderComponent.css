@@ -1,0 +1,24 @@
+.main-header {
+  background-color: #ff6600;
+  display: flex;
+  flex-direction: row;
+}
+
+.main-header nav ul {
+  margin: 0;
+  list-style: none;
+}
+
+.main-header nav ul li {
+  display: inline-block;
+}
+
+.main-header nav ul li a {
+  color: #333;
+  padding: 3% 5%;
+  text-decoration: none;
+}
+
+.main-header nav ul li a:hover {
+  color: #fff;
+}
