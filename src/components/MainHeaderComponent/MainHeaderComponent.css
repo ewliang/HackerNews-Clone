@@ -1,16 +1,15 @@
 .main-header {
-  min-height: 50px;
+  min-height: 20px;
   background-color: #ff6600;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  padding: 3% 0;
+  padding: 2% 0;
 }
 
 .main-logo {
   max-width: 50px;
-  max-height: auto;
 }
 
 .sitename {

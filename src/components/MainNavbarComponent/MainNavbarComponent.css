@@ -7,6 +7,7 @@
 .main-navbar ul {
   margin: 0;
   list-style: none;
+  padding: 0;
 }
 
 .main-navbar ul li {
@@ -15,13 +16,13 @@
 
 .main-navbar ul li a {
   max-width: 100%;
-  color: #333;
+  color: #fff;
   padding: 10px 30px !important;
   text-decoration: none;
   display: block;
 }
 
 .main-navbar ul li a:hover {
-  color: #fff;
+  color: #333;
   background-color: #e57602;
 }
