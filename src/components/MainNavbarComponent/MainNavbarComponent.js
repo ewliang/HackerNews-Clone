@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { NavLink } from 'react-router-dom';
 import styles from './MainNavbarComponent.css';
 
 class MainNavbarComponent extends Component {
@@ -6,11 +7,12 @@ class MainNavbarComponent extends Component {
     return (
       <nav className = { styles['main-navbar'] }>
         <ul>
-          <li><a href = "">New</a></li>
-          <li><a href = "">Comments</a></li>
-          <li><a href = "">Show</a></li>
-          <li><a href = "">Ask</a></li>
-          <li><a href = "">Jobs</a></li>
+          <li><NavLink to = '/'>Home</NavLink></li>
+          <li><NavLink to = '/newest'>Newest</NavLink></li>
+          <li><NavLink to = '/comments'>Comments</NavLink></li>
+          <li><NavLink to = '/show'>Show</NavLink></li>
+          <li><NavLink to = '/ask'>Ask</NavLink></li>
+          <li><NavLink to = '/jobs'>Jobs</NavLink></li>
         </ul>
       </nav>
     );

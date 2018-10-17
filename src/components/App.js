@@ -17,17 +17,19 @@ class App extends Component {
     return (
       <div>
         <MainHeaderComponent/>
-        <MainNavbarComponent/>
         <BrowserRouter>
-          <Switch>
-            <Route exact path = '/' component = { HomePageComponent } />
-            <Route exact path = '/newest' component = { NewPageComponent } />
-            <Route exact path = '/comments' component = { CommentsPageComponent } />
-            <Route exact path = '/show' component = { ShowPageComponent } />
-            <Route exact path = '/ask' component = { AskPageComponent } />
-            <Route exact path = '/jobs' component = { JobsPageComponent } />
-            <Route component = { ErrorPageComponent } />
-          </Switch>
+          <div>
+            <MainNavbarComponent/>
+            <Switch>
+              <Route exact path = '/' component = { HomePageComponent } />
+              <Route exact path = '/newest' component = { NewPageComponent } />
+              <Route exact path = '/comments' component = { CommentsPageComponent } />
+              <Route exact path = '/show' component = { ShowPageComponent } />
+              <Route exact path = '/ask' component = { AskPageComponent } />
+              <Route exact path = '/jobs' component = { JobsPageComponent } />
+              <Route component = { ErrorPageComponent } />
+            </Switch>
+          </div>
         </BrowserRouter>
       </div>
     );
