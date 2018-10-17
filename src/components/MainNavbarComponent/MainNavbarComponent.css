@@ -1,0 +1,18 @@
+.main-navbar ul {
+  margin: 0;
+  list-style: none;
+}
+
+.main-navbar ul li {
+  display: inline-block;
+}
+
+.main-navbar ul li a {
+  color: #333;
+  padding: 10px 15px !important;
+  text-decoration: none;
+}
+
+.main-navbar ul li a:hover {
+  color: #fff;
+}
