@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 
 class JobsPageComponent extends Component {
   constructor(props) {
@@ -11,13 +12,12 @@ class JobsPageComponent extends Component {
   }
 
   componentDidMount() {
-    fetch('https://hacker-news.firebaseio.com/v0/jobstories.json?print=pretty')
-    .then(res => res.json())
+    axios.get('https://hacker-news.firebaseio.com/v0/jobstories.json')
     .then(
-      (result) => {
+      (response) => {
         this.setState({
           isLoaded: true,
-          items: result
+          items: response.data
         });
       },
       (error) => {

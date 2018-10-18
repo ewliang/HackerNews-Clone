@@ -3,13 +3,13 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import MainHeaderComponent from './MainHeaderComponent/MainHeaderComponent.js';
 import MainNavbarComponent from './MainNavbarComponent/MainNavbarComponent.js';
 
-import HomePageComponent from './HomePageComponent/HomePageComponent.js';
-import NewPageComponent from './NewPageComponent/NewPageComponent.js';
-import CommentsPageComponent from './CommentsPageComponent/CommentsPageComponent.js';
-import ShowPageComponent from './ShowPageComponent/ShowPageComponent.js';
-import AskPageComponent from './AskPageComponent/AskPageComponent.js';
-import JobsPageComponent from './JobsPageComponent/JobsPageComponent.js';
-import ErrorPageComponent from './ErrorPageComponent/ErrorPageComponent.js';
+import HomePage from '../pages/HomePage.js';
+import NewPage from '../pages/NewPage.js';
+import CommentsPage from '../pages/CommentsPage.js';
+import ShowPage from '../pages/ShowPage.js';
+import AskPage from '../pages/AskPage.js';
+import JobsPage from '../pages/JobsPage.js';
+import ErrorPage from '../pages/ErrorPage.js';
 
 
 class App extends Component {
@@ -21,13 +21,13 @@ class App extends Component {
           <div>
             <MainNavbarComponent/>
             <Switch>
-              <Route exact path = '/' component = { HomePageComponent } />
-              <Route exact path = '/newest' component = { NewPageComponent } />
-              <Route exact path = '/comments' component = { CommentsPageComponent } />
-              <Route exact path = '/show' component = { ShowPageComponent } />
-              <Route exact path = '/ask' component = { AskPageComponent } />
-              <Route exact path = '/jobs' component = { JobsPageComponent } />
-              <Route component = { ErrorPageComponent } />
+              <Route exact path = '/' component = { HomePage } />
+              <Route exact path = '/newest' component = { NewPage } />
+              <Route exact path = '/comments' component = { CommentsPage } />
+              <Route exact path = '/show' component = { ShowPage } />
+              <Route exact path = '/ask' component = { AskPage } />
+              <Route exact path = '/jobs' component = { JobsPage } />
+              <Route component = { ErrorPage } />
             </Switch>
           </div>
         </BrowserRouter>

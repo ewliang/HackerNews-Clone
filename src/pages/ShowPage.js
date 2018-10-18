@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class NewPageComponent extends Component {
+class ShowPageComponent extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -11,13 +11,12 @@ class NewPageComponent extends Component {
   }
 
   componentDidMount() {
-    fetch('https://hacker-news.firebaseio.com/v0/newstories.json?print=pretty')
-    .then(res => res.json())
+    axios.get('https://hacker-news.firebaseio.com/v0/showstories.json')
     .then(
-      (result) => {
+      (response) => {
         this.setState({
           isLoaded: true,
-          items: result
+          items: response.data
         });
       },
       (error) => {
@@ -49,4 +48,4 @@ class NewPageComponent extends Component {
   }
 }
 
-export default NewPageComponent;
+export default ShowPageComponent;
