@@ -9,7 +9,6 @@ class MainNavbarComponent extends Component {
         <ul>
           <li><NavLink to = '/'>Home</NavLink></li>
           <li><NavLink to = '/newest'>Newest</NavLink></li>
-          <li><NavLink to = '/comments'>Comments</NavLink></li>
           <li><NavLink to = '/show'>Show</NavLink></li>
           <li><NavLink to = '/ask'>Ask</NavLink></li>
           <li><NavLink to = '/jobs'>Jobs</NavLink></li>
