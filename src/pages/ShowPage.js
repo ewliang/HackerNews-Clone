@@ -7,30 +7,49 @@ class ShowPageComponent extends Component {
     this.state = {
       error: null,
       isLoaded: false,
-      items: []
+      items: [],
+      posts: []
     };
   }
 
   componentDidMount() {
     axios.get('https://hacker-news.firebaseio.com/v0/showstories.json')
-    .then(
-      (response) => {
-        this.setState({
-          isLoaded: true,
-          items: response.data
+    .then((response) => {
+      this.setState({
+        items: response.data
+      });
+
+      var promises = [];
+      this.state.items.forEach((id) => {
+        promises.push(axios.get(`https://hacker-news.firebaseio.com/v0/item/${id}.json`))
+      });
+      Promise.all(promises).then((results) => {
+        results.forEach((response) => {
+          this.state.posts.push(response.data);
         });
-      },
-      (error) => {
+        console.log(this.state.posts);
         this.setState({
-          isLoaded: true,
-          error
+          isLoaded: true
         });
-      }
-    )
+      });
+
+    })
+    .catch((error) => {
+      this.setState({
+        isLoaded: true,
+        error
+      });
+    });
+  }
+
+  parseRootURL(rawURL) {
+    const urlRegex = /(https:\/\/|http:\/\/)?((www.)?([a-z\-]+.))(([a-z\-]+)(?:\.\w+)+)/i;
+      console.log(rawURL.match(urlRegex)[0]);
+    return rawURL.match(urlRegex)[0];
   }
 
   render() {
-    const { error, isLoaded, items } = this.state;
+    const { error, isLoaded, items, posts } = this.state;
     if(error) {
       return <div>Error: { error.message }</div>;
     } else if(!isLoaded) {
@@ -38,11 +57,14 @@ class ShowPageComponent extends Component {
     } else {
       return (
         <ul>
-          {items.map(item => (
-            <li key = { item }>
-              { item }
-            </li>
-          ))}
+          {
+            posts.map(post => (
+              <li key = { post.id }>
+                <a href = { post.url }>{ post.title }</a> <small><a href = { post.url }>({ (post.hasOwnProperty('url')) ? this.parseRootURL(post.url) : post.url })</a></small>
+                <small>{ post.time }</small>
+              </li>
+            ))
+          }
         </ul>
       );
     }
