@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import styles from '../../public/css/style.css';
 
 class JobsPageComponent extends Component {
   constructor(props) {
@@ -13,6 +14,7 @@ class JobsPageComponent extends Component {
   }
 
   componentDidMount() {
+    document.title = 'Jobs';
     axios.get('https://hacker-news.firebaseio.com/v0/jobstories.json')
     .then((response) => {
       this.setState({
@@ -56,16 +58,22 @@ class JobsPageComponent extends Component {
       return <div>Loading...</div>;
     } else {
       return (
-        <ul>
-          {
-            posts.map(post => (
-              <li key = { post.id }>
-                <a href = { post.url }>{ post.title }</a> <small><a href = { post.url }>({ (post.hasOwnProperty('url')) ? this.parseRootURL(post.url) : post.url })</a></small>
-                <small>{ post.time }</small>
-              </li>
-            ))
-          }
-        </ul>
+        <div>
+          <p>
+            These are jobs at YC startups. You can apply to many at once through <a href = "https://www.workatastartup.com" rel = "nofollow">Work at a Startup</a> or <a href = "https://triplebyte.com/iv/L4ymNN4/cp">Triplebyte</a>, and browse company profiles at Key Values (YC W18).
+          </p>
+          <ul className = { styles['posts-list'] }>
+            {
+              posts.map(post => (
+                <li key = { post.id }>
+                  <a href = { post.url } className = { styles['post-list-title'] }>{ post.title }</a> <small><a href = { post.url }>({ (post.hasOwnProperty('url')) ? this.parseRootURL(post.url) : post.url })</a></small>
+                  <br/>
+                  <small>{ post.time }</small>
+                </li>
+              ))
+            }
+          </ul>
+        </div>
       );
     }
   }

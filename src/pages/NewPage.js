@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import styles from '../../public/css/style.css';
 
 class NewPageComponent extends Component {
   constructor(props) {
@@ -56,12 +57,13 @@ class NewPageComponent extends Component {
       return <div>Loading...</div>;
     } else {
       return (
-        <ul>
+        <ul className = { styles['posts-list'] }>
           {
             posts.map(post => (
               <li key = { post.id }>
-                <a href = { post.url }>{ post.title }</a> <small><a href = { post.url }>({ (post.hasOwnProperty('url')) ? this.parseRootURL(post.url) : post.url })</a></small>
-                <small>{ post.time }</small>
+                <a href = { post.url } className = { styles['post-list-title'] }>{ post.title }</a> <small><a href = { post.url }>({ (post.hasOwnProperty('url')) ? this.parseRootURL(post.url) : post.url })</a></small>
+                <br/>
+                <small>{ (post.score > 1) ? post.score + ' points': post.score + ' point' } by { post.by } | { post.time }</small>
               </li>
             ))
           }

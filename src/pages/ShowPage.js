@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import styles from '../../public/css/style.css';
 
 class ShowPageComponent extends Component {
   constructor(props) {
@@ -56,16 +57,20 @@ class ShowPageComponent extends Component {
       return <div>Loading...</div>;
     } else {
       return (
-        <ul>
-          {
-            posts.map(post => (
-              <li key = { post.id }>
-                <a href = { post.url }>{ post.title }</a> <small><a href = { post.url }>({ (post.hasOwnProperty('url')) ? this.parseRootURL(post.url) : post.url })</a></small>
-                <small>{ post.time }</small>
-              </li>
-            ))
-          }
-        </ul>
+        <div>
+          <p>Please read the rules. You can also browse the newest Show HNs.</p>
+          <ul className = { styles['posts-list'] }>
+            {
+              posts.map(post => (
+                <li key = { post.id }>
+                  <a href = { post.url } className = { styles['post-list-title'] }>{ post.title }</a> <small><a href = { post.url }>({ (post.hasOwnProperty('url')) ? this.parseRootURL(post.url) : post.url })</a></small>
+                  <br/>
+                  <small>{ post.by } | { post.time }</small>
+                </li>
+              ))
+            }
+          </ul>
+        </div>
       );
     }
   }
