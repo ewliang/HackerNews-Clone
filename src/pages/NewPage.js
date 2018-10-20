@@ -14,6 +14,7 @@ class NewPageComponent extends Component {
   }
 
   componentDidMount() {
+    document.title = 'Newest | HackerNews Clone by Eric Liang';
     axios.get('https://hacker-news.firebaseio.com/v0/newstories.json')
     .then((response) => {
       this.setState({
@@ -43,9 +44,7 @@ class NewPageComponent extends Component {
   }
 
   parseRootURL(rawURL) {
-    console.log("RAW: " + rawURL);
     const urlRegex = /(https:\/\/|http:\/\/)?((www.)?([a-z\-]+.))?(([a-z\-]+)(?:\.\w+)+)/i;
-    console.log("MATCH: " + rawURL.match(urlRegex));
     return rawURL.match(urlRegex)[0];
   }
 

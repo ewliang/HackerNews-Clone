@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import moment from 'moment';
 import styles from '../../public/css/style.css';
 
 class JobsPageComponent extends Component {
@@ -14,7 +15,7 @@ class JobsPageComponent extends Component {
   }
 
   componentDidMount() {
-    document.title = 'Jobs';
+    document.title = 'Jobs | HackerNews Clone by Eric Liang';
     axios.get('https://hacker-news.firebaseio.com/v0/jobstories.json')
     .then((response) => {
       this.setState({
@@ -59,7 +60,7 @@ class JobsPageComponent extends Component {
     } else {
       return (
         <div>
-          <p>
+          <p className = { styles['page-description'] }>
             These are jobs at YC startups. You can apply to many at once through <a href = "https://www.workatastartup.com" rel = "nofollow">Work at a Startup</a> or <a href = "https://triplebyte.com/iv/L4ymNN4/cp">Triplebyte</a>, and browse company profiles at Key Values (YC W18).
           </p>
           <ul className = { styles['posts-list'] }>

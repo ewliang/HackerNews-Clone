@@ -14,6 +14,7 @@ class ShowPageComponent extends Component {
   }
 
   componentDidMount() {
+    document.title = 'Show | HackerNews Clone by Eric Liang';
     axios.get('https://hacker-news.firebaseio.com/v0/showstories.json')
     .then((response) => {
       this.setState({
@@ -58,7 +59,7 @@ class ShowPageComponent extends Component {
     } else {
       return (
         <div>
-          <p>Please read the rules. You can also browse the newest Show HNs.</p>
+          <p className = { styles['page-description'] }>Please read the rules. You can also browse the newest Show HNs.</p>
           <ul className = { styles['posts-list'] }>
             {
               posts.map(post => (

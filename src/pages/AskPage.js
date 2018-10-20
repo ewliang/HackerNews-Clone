@@ -14,6 +14,7 @@ class AskPageComponent extends Component {
   }
 
   componentDidMount() {
+    document.title = 'Ask | HackerNews Clone by Eric Liang';
     axios.get('https://hacker-news.firebaseio.com/v0/askstories.json')
     .then((response) => {
       this.setState({
@@ -57,7 +58,7 @@ class AskPageComponent extends Component {
       return <div>Loading...</div>;
     } else {
       return (
-        <ul className = { styles['posts-list'] }>
+        <ul className = { styles['posts-list'] } id = { styles['postScored'] }>
           {
             posts.map(post => (
               <li key = { post.id } className = { styles['post'] }>
