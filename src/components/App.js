@@ -7,6 +7,7 @@ import NewPage from '../pages/NewPage.js';
 import ShowPage from '../pages/ShowPage.js';
 import AskPage from '../pages/AskPage.js';
 import JobsPage from '../pages/JobsPage.js';
+import UserPage from '../pages/UserPage.js';
 import ErrorPage from '../pages/ErrorPage.js';
 
 
@@ -24,6 +25,7 @@ class App extends Component {
               <Route exact path = '/show' component = { ShowPage } />
               <Route exact path = '/ask' component = { AskPage } />
               <Route exact path = '/jobs' component = { JobsPage } />
+              <Route exact path = '/user/:user' component = { UserPage } />
               <Route component = { ErrorPage } />
             </Switch>
           </div>
