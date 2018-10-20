@@ -18,19 +18,31 @@ small {
   color: #828282 !important ;
 }
 
+/* Page */
+.page-description {
+  max-width: 960px;
+  margin: 3% auto !important;
+  text-align: center;
+  padding: 1%;
+  line-height: 1.4;
+  justify-content: center;
+}
+
 /* Post */
 .posts-list {
   max-width: 960px;
   background-color: #fff;
   list-style-type: none;
-  margin: 5% auto;
+  margin: 3% auto 5% auto;
   padding-left: 0;
 }
 
 .posts-list li {
   padding: 3% 5%;
   line-height: 1.4;
+}
 
+#postScored li {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -52,4 +64,8 @@ small {
 
 .posts-list small a {
   color: #888;
+}
+
+.posts-list small a:hover {
+  text-decoration: underline;
 }
