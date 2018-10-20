@@ -26,7 +26,7 @@ class NewPageComponent extends Component {
       });
       Promise.all(promises).then((results) => {
         results.forEach((response) => {
-          if(response != null)
+          if(response.data != null)
             this.state.posts.push(response.data);
         });
         this.setState({
@@ -58,11 +58,11 @@ class NewPageComponent extends Component {
       return (
         <ul className = { styles['posts-list'] }>
           {
-            posts.map(post => (
+            posts.map((post) => (
               <li key = { post.id }>
                 <a href = { post.url } className = { styles['post-list-title'] }>{ post.title }</a> <small><a href = { post.url }>({ (post.hasOwnProperty('url')) ? this.parseRootURL(post.url) : post.url })</a></small>
                 <br/>
-                <small>{ (post.score > 1) ? post.score + ' points': post.score + ' point' } by { post.by } | { post.time }</small>
+                <small>{ (post.score > 1) ? post.score + ' points': post.score + ' point' } by <a href = { `/user/${post.by}` }>{ post.by }</a> | { post.time }</small>
               </li>
             ))
           }

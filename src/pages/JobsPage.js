@@ -27,10 +27,9 @@ class JobsPageComponent extends Component {
         promises.push(axios.get(`https://hacker-news.firebaseio.com/v0/item/${id}.json`))
       });
       Promise.all(promises).then((results) => {
-        results.forEach((response) => {
+        results.forEach((response, index) => {
           this.state.posts.push(response.data);
         });
-        console.log(this.state.posts);
         this.setState({
           isLoaded: true
         });
@@ -46,8 +45,7 @@ class JobsPageComponent extends Component {
   }
 
   parseRootURL(rawURL) {
-    const urlRegex = /(https:\/\/|http:\/\/)?((www.)?([a-z\-]+.))(([a-z\-]+)(?:\.\w+)+)/i;
-      console.log(rawURL.match(urlRegex)[0]);
+    const urlRegex = /(https:\/\/|http:\/\/)?((www.)?([a-z\-]+.))?(([a-z\-]+)(?:\.\w+)+)/i;
     return rawURL.match(urlRegex)[0];
   }
 

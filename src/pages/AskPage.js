@@ -45,7 +45,7 @@ class AskPageComponent extends Component {
   }
 
   parseRootURL(rawURL) {
-    const urlRegex = /(https:\/\/|http:\/\/)?((www.)?([a-z\-]+.))(([a-z\-]+)(?:\.\w+)+)/i;
+    const urlRegex = /(https:\/\/|http:\/\/)?((www.)?([a-z\-]+.))?(([a-z\-]+)(?:\.\w+)+)/i;
       console.log(rawURL.match(urlRegex)[0]);
     return rawURL.match(urlRegex)[0];
   }
@@ -66,7 +66,7 @@ class AskPageComponent extends Component {
                 <div>
                   <a href = { post.url } className = { styles['post-list-title'] }>{ post.title }</a>
                   <br/>
-                  <small>{ post.by } | { post.time }</small>
+                  <small><a href = { `/user/${post.by}` }>{ post.by }</a> | { post.time }</small>
                 </div>
               </li>
             ))

@@ -45,8 +45,7 @@ class ShowPageComponent extends Component {
   }
 
   parseRootURL(rawURL) {
-    const urlRegex = /(https:\/\/|http:\/\/)?((www.)?([a-z\-]+.))(([a-z\-]+)(?:\.\w+)+)/i;
-      console.log(rawURL.match(urlRegex)[0]);
+    const urlRegex = /(https:\/\/|http:\/\/)?((www.)?([a-z\-]+.))?(([a-z\-]+)(?:\.\w+)+)/i;
     return rawURL.match(urlRegex)[0];
   }
 
@@ -66,7 +65,7 @@ class ShowPageComponent extends Component {
                 <li key = { post.id }>
                   <a href = { post.url } className = { styles['post-list-title'] }>{ post.title }</a> <small><a href = { post.url }>({ (post.hasOwnProperty('url')) ? this.parseRootURL(post.url) : post.url })</a></small>
                   <br/>
-                  <small>{ post.by } | { post.time }</small>
+                  <small>{ (post.score > 1) ? post.score + ' points': post.score + ' point' } by <a href = { `/user/${post.by}` }>{ post.by }</a> | { post.time }</small>
                 </li>
               ))
             }
