@@ -4,11 +4,13 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  /*justify-content: start;*/
+  justify-content: center;
+  padding: 1%;
 }
 
 .main-logo {
-  max-width: 50px;
+  max-width: 48px;
+  margin: 0 1%;
 }
 
 .sitename {
