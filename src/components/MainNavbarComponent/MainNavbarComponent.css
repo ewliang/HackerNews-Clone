@@ -1,7 +1,6 @@
 .main-navbar {
   max-width: 100%;
-  background-color: #fc880d;
-  text-align: center;
+  background-color: #f39c12;
 }
 
 .main-navbar ul {
@@ -20,9 +19,4 @@
   padding: 10px 30px !important;
   text-decoration: none;
   display: block;
-}
-
-.main-navbar ul li a:hover {
-  color: #333;
-  background-color: #e57602;
 }
