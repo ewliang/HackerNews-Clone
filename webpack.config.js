@@ -12,21 +12,13 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.(png|jpg|gif)$/i,
+        test: /\.(png|jpg|gif|ico|svg|pdf)$/i,
         use: [
           {
-            loader: 'file-loader'
-          }
-        ]
-      },
-      {
-        test: /\.(png|jpg|gif)$/i,
-        use: [
-          {
-            loader: 'url-loader',
+            loader: 'file-loader',
             options: {
-              limit: 8192
-            }
+              name: '[path][name]-[hash:8].[ext]'
+            },
           }
         ]
       },
