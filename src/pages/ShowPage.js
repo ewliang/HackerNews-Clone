@@ -65,7 +65,7 @@ class ShowPageComponent extends Component {
                 <li key = { post.id }>
                   <a href = { post.url } className = { styles['post-list-title'] }>{ post.title }</a> <small><a href = { post.url }>({ (post.hasOwnProperty('url')) ? this.parseRootURL(post.url) : post.url })</a></small>
                   <br/>
-                  <small>{ (post.score > 1) ? post.score + ' points': post.score + ' point' } by <a href = { `/user/${post.by}` }>{ post.by }</a> | { post.time }</small>
+                  <small>{ (post.score > 1) ? post.score + ' points': post.score + ' point' } by <a href = { `/user/${post.by}` }>{ post.by }</a> | { post.time } | <a href = { `/item/${post.id}` }>{ (post.kids) ? ((post.kids.length > 1) ? (post.kids.length + ' comments') : '1 comment') : '0 comments' }</a></small>
                 </li>
               ))
             }
