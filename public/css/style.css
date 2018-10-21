@@ -18,6 +18,13 @@ small {
   color: #828282 !important ;
 }
 
+.container {
+  max-width: 960px;
+  background-color: #fff;
+  margin: 0 auto;
+  padding: 3%;
+}
+
 /* Page */
 .page-header {
   max-width: 960px;

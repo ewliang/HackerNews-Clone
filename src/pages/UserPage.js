@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import moment from 'moment';
+import styles from '../../public/css/style.css';
 
 class UserPageComponent extends Component {
 
@@ -39,7 +40,7 @@ class UserPageComponent extends Component {
       return <div>Loading...</div>;
     } else {
       return (
-        <div>
+        <div className = { styles['container'] }>
           <h1>User: { user.id }</h1>
           <p>
             About: <span dangerouslySetInnerHTML={{__html: user.about }} />
