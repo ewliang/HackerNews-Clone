@@ -39,7 +39,7 @@ class UserPageComponent extends Component {
     } else {
       return (
         <div>
-          <h1>{ 'User: ' + user.id }</h1>
+          <h1>User: { user.id }</h1>
           <p>
             About: { user.about }
             <br/>
