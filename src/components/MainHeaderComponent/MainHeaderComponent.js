@@ -6,7 +6,7 @@ class MainHeaderComponent extends Component {
   render() {
     return (
       <header className = { styles['main-header'] }>
-        <img src = { logo } className = { styles['main-logo'] } alt = "HackerNews Clone Logo"/>
+        <img src = { logo } className = { styles['main-logo'] } alt = "HackerNews Logo"/>
         <span className = { styles.sitename }>HackerNews</span>
       </header>
     );
