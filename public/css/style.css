@@ -19,6 +19,21 @@ small {
 }
 
 /* Page */
+.page-header {
+  max-width: 960px;
+  margin: 3% auto !important;
+  text-align: center;
+  padding: 1%;
+  line-height: 1.4;
+  justify-content: center;
+}
+
+.page-title {
+  font-size: 24px;
+  font-weight: 400;
+  text-transform: capitalize;
+}
+
 .page-description {
   max-width: 960px;
   margin: 3% auto !important;
@@ -68,4 +83,9 @@ small {
 
 .posts-list small a:hover {
   text-decoration: underline;
+}
+
+/* Comments */
+.comments-text {
+  max-width: 100%;
 }
