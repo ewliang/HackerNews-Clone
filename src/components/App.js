@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import MainHeaderComponent from './MainHeaderComponent/MainHeaderComponent.js';
 import MainNavbarComponent from './MainNavbarComponent/MainNavbarComponent.js';
+import MainFooterComponent from './MainFooterComponent/MainFooterComponent.js';
 
 import NewPage from '../pages/NewPage.js';
 import ShowPage from '../pages/ShowPage.js';
@@ -32,6 +33,7 @@ class App extends Component {
             </Switch>
           </div>
         </BrowserRouter>
+        <MainFooterComponent/>
       </div>
     );
   }
