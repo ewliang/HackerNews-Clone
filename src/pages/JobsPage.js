@@ -67,7 +67,7 @@ class JobsPageComponent extends Component {
                 <li key = { post.id }>
                   <a href = { post.url } className = { styles['post-list-title'] }>{ post.title }</a> <small><a href = { post.url }>({ (post.hasOwnProperty('url')) ? this.parseRootURL(post.url) : post.url })</a></small>
                   <br/>
-                  <small>{ post.time }</small>
+                  <small>{ moment.unix(post.time).format('MMM DD, YYYY') }</small>
                 </li>
               ))
             }

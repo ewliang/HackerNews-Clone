@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import moment from 'moment';
 import styles from '../../public/css/style.css';
 
 class AskPageComponent extends Component {
@@ -66,7 +67,7 @@ class AskPageComponent extends Component {
                 <div>
                   <a href = { post.url } className = { styles['post-list-title'] }>{ post.title }</a>
                   <br/>
-                  <small>by <a href = { `/user/${post.by}` }>{ post.by }</a> | { post.time } | <a href = { `/item/${post.id}` }>{ (post.kids) ? ((post.kids.length > 1) ? (post.kids.length + ' comments') : '1 comment') : '0 comments' }</a></small>
+                  <small>by <a href = { `/user/${post.by}` }>{ post.by }</a> | { moment.unix(post.time).format('MMM DD, YYYY') } | <a href = { `/item/${post.id}` }>{ (post.kids) ? ((post.kids.length > 1) ? (post.kids.length + ' comments') : '1 comment') : '0 comments' }</a></small>
                 </div>
               </li>
             ))

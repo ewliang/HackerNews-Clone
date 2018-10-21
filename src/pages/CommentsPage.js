@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import moment from 'moment';
 import styles from '../../public/css/style.css';
 
 class CommentsPageComponent extends Component {
@@ -72,7 +73,7 @@ class CommentsPageComponent extends Component {
             {
               comments.map((comment) => (
                 <li key = { comment.id }>
-                  <small>by <a href = { `/user/${comment.by}` }>{ comment.by }</a> | { comment.time }</small>
+                  <small>by <a href = { `/user/${comment.by}` }>{ comment.by }</a> | { moment.unix(comment.time).format('MMM DD, YYYY') }</small>
                   <br/>
                   <p className = { styles['comments-text'] }>{ comment.text }</p>
                 </li>

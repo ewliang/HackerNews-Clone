@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import moment from 'moment';
 
 class UserPageComponent extends Component {
 
@@ -41,9 +42,9 @@ class UserPageComponent extends Component {
         <div>
           <h1>User: { user.id }</h1>
           <p>
-            About: { user.about }
+            About: <span dangerouslySetInnerHTML={{__html: user.about }} />
             <br/>
-            Created: { user.created }
+            Created: { moment.unix(user.created).format('MMM DD, YYYY') }
             <br/>
             Karma: { user.karma }
           </p>
