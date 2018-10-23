@@ -22,7 +22,7 @@ class App extends Component {
           <div>
             <MainNavbarComponent/>
             <Switch>
-              <Route exact path = '/' component = { NewPage } />
+              <Route exact strict path = '/' component = { NewPage } />
               <Route exact path = '/newest' component = { NewPage } />
               <Route exact path = '/show' component = { ShowPage } />
               <Route exact path = '/ask' component = { AskPage } />
