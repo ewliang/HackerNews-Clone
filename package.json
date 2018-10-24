@@ -4,7 +4,8 @@
   "description": "A React.js based HackerNews clone.",
   "main": "index.js",
   "scripts": {
-    "start": "webpack --mode production"
+    "start": "webpack-dev-server --mode development --open --hot",
+    "build": "webpack --mode production"
   },
   "repository": {
     "type": "git",
@@ -23,7 +24,7 @@
     "url": "https://github.com/ewliang/HackerNews-Clone/issues"
   },
   "homepage": "https://github.com/ewliang/HackerNews-Clone#readme",
-  "devDependencies": {
+  "dependencies": {
     "@babel/core": "^7.1.2",
     "@babel/preset-env": "^7.1.0",
     "babel-loader": "^8.0.4",
@@ -34,9 +35,7 @@
     "style-loader": "^0.23.1",
     "webpack": "^4.20.2",
     "webpack-cli": "^3.1.2",
-    "webpack-dev-server": "^3.1.9"
-  },
-  "dependencies": {
+    "webpack-dev-server": "^3.1.9",
     "@babel/preset-react": "^7.0.0",
     "axios": "^0.18.0",
     "moment": "^2.22.2",
