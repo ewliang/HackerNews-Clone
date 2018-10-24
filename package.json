@@ -4,8 +4,7 @@
   "description": "A React.js based HackerNews clone.",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --mode development --open --hot",
-    "build": "webpack --mode production"
+    "start": "webpack --mode production"
   },
   "repository": {
     "type": "git",
