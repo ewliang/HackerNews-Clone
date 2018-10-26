@@ -21,14 +21,18 @@ class NewPageComponent extends Component {
       this.setState({
         items: response.data
       });
+      console.log("IDs Collected: " + this.state.items.length);
       var promises = [];
       this.state.items.forEach((id) => {
         promises.push(axios.get(`https://hacker-news.firebaseio.com/v0/item/${id}.json`))
       });
       Promise.all(promises).then((results) => {
-        results.forEach((response) => {
-          if(response.data != null)
+        results.forEach((response, index) => {
+          if(response.data == null)
+            console.log("NULL FOUND");
+          else {
             this.state.posts.push(response.data);
+          }
         });
         this.setState({
           isLoaded: true
@@ -46,7 +50,10 @@ class NewPageComponent extends Component {
 
   parseRootURL(rawURL) {
     const urlRegex = /(https:\/\/|http:\/\/)?((www.)?([a-z\-]+.))?(([a-z\-]+)(?:\.\w+)+)/i;
-    return rawURL.match(urlRegex)[0];
+    if(rawURL == '' || rawURL == null || rawURL == 'undefined')
+      return ''
+    else
+      return rawURL.match(urlRegex)[0];
   }
 
   render() {
@@ -61,7 +68,7 @@ class NewPageComponent extends Component {
           {
             posts.map((post) => (
               <li key = { post.id }>
-                <a href = { post.url } className = { styles['post-list-title'] }>{ post.title }</a> <small><a href = { post.url }>{ (post.hasOwnProperty('url')) ? '(' + this.parseRootURL(post.url) + ')' : '' }</a></small>
+                <a href = { (post.hasOwnProperty('url')) ? post.url : '#' } className = { styles['post-list-title'] }>{ post.title }</a><small><a href = { (post.hasOwnProperty('url')) ? post.url : '#' }>({ (post.hasOwnProperty('url') || post.url != null || post.url != '' || post.url != 'undefined') ? this.parseRootURL(post.url) : '' })</a></small>
                 <br/>
                 <small>{ (post.score > 1) ? post.score + ' points': post.score + ' point' } by <a href = { `/user/${post.by}` }>{ post.by }</a> | { moment.unix(post.time).format('MMM DD, YYYY') } | <a href = { `/item/${post.id}` }>{ (post.kids) ? ((post.kids.length > 1) ? (post.kids.length + ' comments') : '1 comment') : '0 comments' }</a></small>
               </li>
