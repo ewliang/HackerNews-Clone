@@ -1,7 +1,7 @@
 # HackerNews Clone
 Just another HackerNews clone using React.js library for learning and practicing using React.js.
 
-DEMO: []()
+DEMO: [https://hackernewsreactclone.herokuapp.com](https://hackernewsreactclone.herokuapp.com)
 
 # Table of Contents
 - [Setup and Requirements](#setup-and-requirements)
